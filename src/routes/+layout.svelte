@@ -12,30 +12,32 @@
 	} from 'flowbite-svelte';
 	import '../app.css';
 	import { browser } from '$app/environment';
+	import CookieBanner from '$lib/CookieBanner.svelte';
+
+
 	let { children } = $props();
 
-	// Reactive dark mode state with rune
-	let darkMode = $state(
-		browser 
-			? localStorage.getItem('darkMode') === 'true' || 
-			  window.matchMedia('(prefers-color-scheme: dark)').matches 
-			: false
-	);
 
-	// Effect to sync dark mode with localStorage and document
-	$effect(() => {
-		if (browser) {
-			localStorage.setItem('darkMode', darkMode.toString());
-			document.documentElement.classList.toggle('dark', darkMode);
-		}
-	});
+    // Initialize with localStorage value or true (dark mode) by default
+    let darkMode = $state(
+        browser 
+            ? localStorage.getItem('darkMode') !== null 
+                ? localStorage.getItem('darkMode') === 'true'
+                : true
+            : true
+    );
 
-	function toggleDarkMode() {
-		darkMode = !darkMode;
-	}
-	function initAnalytics () {
-		// do something with segment.io or google analytics etc
-	}
+    // Sync with localStorage and document whenever darkMode changes
+    $effect(() => {
+        if (browser) {
+            localStorage.setItem('darkMode', darkMode.toString());
+            document.documentElement.classList.toggle('dark', darkMode);
+        }
+    });
+
+    function toggleDarkMode() {
+        darkMode = !darkMode;
+    }
 </script>
 
 <svelte:head>
@@ -70,23 +72,20 @@
 			</div>
 			<NavUl class="order-1">
 				<NavLi href="/">Home</NavLi>
-				<NavLi href="/">About</NavLi>
-				<NavLi href="/">Navbar</NavLi>
-				<NavLi href="/">Pricing</NavLi>
-				<NavLi href="/">Contact</NavLi>
+				<NavLi href="/about">About</NavLi>
+				<NavLi href="/contact">Contact</NavLi>
 			</NavUl>
 		</Navbar>
 	</div>
 	
 	{@render children()}
+	<CookieBanner/>
 	<div class="mt-auto">
 		<Footer>
 			<div class="sm:flex sm:items-center sm:justify-between">
 				<FooterCopyright href="/" by="Dam Levels™" year={2025} />
 				<FooterLinkGroup ulClass="flex flex-wrap items-center gap-3 mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
-					<FooterLink href="/">Privacy Policy</FooterLink>
-					<FooterLink href="/">Licensing</FooterLink>
-					<FooterLink href="/">Contact</FooterLink>
+					<FooterLink href="/policy">Privacy Policy</FooterLink>
 				</FooterLinkGroup>
 			</div>
 		</Footer>

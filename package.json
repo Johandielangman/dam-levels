@@ -26,9 +26,10 @@
 		"vite": "^6.0.0"
 	},
 	"dependencies": {
-		"@beyonk/gdpr-cookie-consent-banner": "^12.1.6",
 		"@lukulent/svelte-umami": "^0.0.4",
+		"axios": "^1.8.3",
 		"flowbite-svelte-icons": "^2.0.3",
-		"vanilla-cookieconsent": "^3.1.0"
+		"leaflet": "^1.9.4",
+		"mongodb": "^6.14.2"
 	}
 }
