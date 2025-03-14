@@ -7,9 +7,6 @@
 }
 
 @layer base {
-    body {
-        @apply bg-white text-gray-900 dark:bg-gray-900 dark:text-white;
-    }
 
     .text-outline {
         text-shadow: 0 0 50px hsla(0, 0%, 0%, .4);

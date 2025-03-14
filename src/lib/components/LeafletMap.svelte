@@ -1,5 +1,5 @@
 <script>
-    import { onMount, onDestroy, afterUpdate } from 'svelte';
+    import { onMount, onDestroy } from 'svelte';
     import { getColor } from '$lib/utils/helpers';
 
     export let data;
@@ -109,11 +109,9 @@
 
     onMount(initializeMap);
 
-    afterUpdate(() => {
-        if (mapInitialized) {
-            updateMarkers();
-        }
-    });
+    $: if (mapInitialized && data) {
+        updateMarkers();
+    }
 
     onDestroy(() => {
         if (map) {
@@ -123,4 +121,4 @@
     });
 </script>
 
-<div bind:this={mapContainer} class="h-96 w-full"></div>
+<div bind:this={mapContainer} class="w-full h-[600px]"></div>
