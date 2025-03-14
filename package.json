@@ -27,6 +27,7 @@
 	},
 	"dependencies": {
 		"@lukulent/svelte-umami": "^0.0.4",
+		"amplify-adapter": "^0.2.0",
 		"axios": "^1.8.3",
 		"flowbite-svelte-icons": "^2.0.3",
 		"leaflet": "^1.9.4",
