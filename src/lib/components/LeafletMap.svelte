@@ -121,4 +121,4 @@
     });
 </script>
 
-<div bind:this={mapContainer} class="w-full h-[600px]"></div>
+<div bind:this={mapContainer} class="w-full h-100 sm:h-120 md:h-[600px] relative" style="z-index: 0;"></div>

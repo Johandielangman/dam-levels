@@ -85,7 +85,7 @@
 				<NavHamburger />
 			</div>
 			<NavUl class="order-1">
-				<NavLi href="/">Home</NavLi>
+				<NavLi href="/">Dashboard</NavLi>
 				<NavLi href="/about">About</NavLi>
 				<NavLi href="/contact">Contact</NavLi>
 			</NavUl>
@@ -93,6 +93,7 @@
 	</div>
 	
 	{@render children()}
+	<div></div>
 	<CookieBanner/>
 	<div class="mt-auto">
 		<Footer>

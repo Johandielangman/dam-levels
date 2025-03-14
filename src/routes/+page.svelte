@@ -47,7 +47,7 @@
   <link rel="icon" href="/favicon.svg" />
 </svelte:head>
 
-<div class="container mx-auto p-4 bg-white rounded-2xl dark:bg-gray-900 dark:text-white">
+<div class="container mx-auto p-2 md:p-4 bg-white rounded-2xl dark:bg-gray-900 dark:text-white">
   <h1 class="text-3xl font-bold mb-4 text-gray-900 dark:text-gray-400">South Africa Dam Dashboard 💧</h1>
   <h2 class="text-xl mb-2 text-gray-800 dark:text-gray-200">
     Report Date: <b>{selectedReportDate === 'All' ? 'All Dates' : formatDate(selectedReportDate)}</b> 📆
@@ -66,7 +66,7 @@
         </div>
         <div class="flex flex-col md:flex-row gap-4">
           <!-- Filters Sidebar -->
-          <div class="w-64 md:w-64 mb-4 md:mb-0 order-2 md:order-1">
+          <div class="md:w-64 mb-4 md:mb-0 order-2 md:order-1">
             <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
               <h3 class="text-lg font-semibold mb-3 text-gray-800 dark:text-gray-200">Filters</h3>
               <div class="flex flex-col gap-4">

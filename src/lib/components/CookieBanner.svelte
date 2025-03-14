@@ -58,18 +58,17 @@
   </script>
   
   {#if showBanner}
-    <div class="fixed bottom-0 left-0 right-0 z-50 bg-gray-900 text-white p-4 shadow-lg">
+    <div class="fixed bottom-0 left-0 right-0 z-100 bg-gray-900 text-white p-4 shadow-lg">
       <div class="max-w-4xl mx-auto">
         {#if !showSettings}
           <div class="flex flex-col md:flex-row items-center gap-4">
             <p class="flex-1 text-sm">
-              We use cookies to ensure essential functionality and, with your permission, 
-              to analyze site usage with Umami. See our 
+              Our website doesn't use any Cookies! Yay! 🎉 We have some basic analytics in the background. See our
               <a href="/privacy" class="underline hover:text-gray-300">Privacy Policy</a> 
               for more information.
             </p>
             <div class="flex gap-2">
-              <button 
+              <!-- <button 
                 onclick={() => showSettings = true}
                 class="px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 text-sm"
               >
@@ -80,12 +79,12 @@
                 class="px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 text-sm"
               >
                 Reject Optional
-              </button>
+              </button> -->
               <button 
                 onclick={acceptAll}
                 class="px-4 py-2 bg-blue-600 rounded hover:bg-blue-500 text-sm"
               >
-                Accept All
+                Thanks!
               </button>
             </div>
           </div>
