@@ -93,7 +93,18 @@
 	</div>
 	
 	{@render children()}
-	<div></div>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2319436899330467"
+     crossorigin="anonymous"></script>
+	<!-- Default Ad Unit -->
+	<ins class="adsbygoogle"
+		style="display:block"
+		data-ad-client="ca-pub-2319436899330467"
+		data-ad-slot="5748555666"
+		data-ad-format="auto"
+		data-full-width-responsive="true"></ins>
+	<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
 	<CookieBanner/>
 	<div class="mt-auto">
 		<Footer>
