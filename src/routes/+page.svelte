@@ -7,7 +7,8 @@
   import { page } from '$app/state';
   import { goto, invalidate } from '$app/navigation';
   import { onMount } from 'svelte';
-
+  import { handleEvent  } from '@lukulent/svelte-umami';
+  
   export let data;
 
   // Get URL parameters without using $ prefix
@@ -76,6 +77,8 @@
                     bind:value={selectedReportDate} 
                     class="border p-2 rounded dark:bg-gray-700 dark:border-gray-600 text-gray-800 dark:text-white"
                     on:change={updateFilters}
+                    on:change={handleEvent}
+                    data-umami-event="select-report-date"
                   >
                     {#each reportDates as date}
                       <option value={date}>{date === 'All' ? 'All' : formatDate(date)}</option>
@@ -90,6 +93,8 @@
                     bind:value={selectedProvince} 
                     class="border p-2 rounded dark:bg-gray-700 dark:border-gray-600 text-gray-800 dark:text-white"
                     on:change={updateFilters}
+                    on:change={handleEvent}
+                    data-umami-event="select-province"
                   >
                     {#each provinces as province}
                       <option value={province}>{province}</option>
