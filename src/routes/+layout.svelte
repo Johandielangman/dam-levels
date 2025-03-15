@@ -46,12 +46,19 @@
 
 </script>
 
-<!-- =============== // PAGE TITLE AND METADATA // ===============  -->
+<!-- =============== // BASIC METADATA // ===============  -->
 
 <svelte:head>
-	<title>Dam Levels</title>
-	<meta name="description" content="An amazing dam dashboard!" />
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://damlevels.co.za" />
+    <meta property="og:site_name" content="Dam Levels" />
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="https://app.damlevels.co.za/logo/logo-light.svg" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:domain" content="damlevels.co.za" />
+	<meta name="keywords" content="Data,Dashboard,DWS,SA,South-Africa">
 </svelte:head>
+
+<!-- =============== // MARK: INITIALIZE UMAMI ANALYTICS // ===============  -->
 
 <UmamiAnalytics
 	websiteID={PUBLIC_UMAMI_SITE_ID}
@@ -66,8 +73,9 @@
 
 
 <div class="min-h-screen flex flex-col p-5 bg-white text-gray-900 dark:bg-gray-900 dark:text-white">
+	<!-- =============== // MARK: NAV BAR // ===============  -->
 	<div class="pb-3">
-		<Navbar rounded color="blue">
+		<Navbar rounded color="gray">
 			<NavBrand href="/">
 				<img 
 				src="/logo/logo-light.svg" 
@@ -75,7 +83,7 @@
 				alt="Flowbite Logo Light" 
 				/>
 				<span class="self-center whitespace-nowrap text-xl font-semibold text-gray-900 dark:text-white">
-					Dam Levels
+					Dam Levels of South Africa
 				</span>
 			</NavBrand>
 			<div class="flex md:order-2">
@@ -89,12 +97,15 @@
 			</NavUl>
 		</Navbar>
 	</div>
-	
+
+	<!-- =============== // MARK: CHILDREN // ===============  -->
 	{@render children()}
 
+	<!-- =============== // MARK: COOKIES // ===============  -->
 	<CookieBanner/>
 	<AdUnit/>
 
+	<!-- =============== // FOOTER // ===============  -->
 	<div class="mt-auto">
 		<Footer>
 			<div class="sm:flex sm:items-center sm:justify-between">

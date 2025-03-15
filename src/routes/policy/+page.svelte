@@ -1,6 +1,15 @@
+<script>
+    // =============== // METADATA // ===============
+    let pageTitle = "Privacy Policy";
+    let pageDescription = "This Privacy Policy describes Our policies and procedures on the collection, use, and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.";
+</script>
+<!-- =============== // PAGE TITLE AND METADATA // ===============  -->
+
 <svelte:head>
-    <title>Privacy Policy</title>
-    <meta name="description" content="Dam Levels Privacy Policy" />
+	<title>{pageTitle}</title>
+	<meta name="description" content={pageDescription} />
+    <meta name="twitter:title" property="og:title" itemprop="name" content={pageTitle} />
+    <meta name="twitter:description" property="og:description" itemprop="description" content={pageDescription} />
 </svelte:head>
 
 <div class="container mx-auto p-6 max-w-4xl bg-white rounded-2xl shadow-lg dark:bg-gray-900 dark:text-white transition-all duration-300">

@@ -1,6 +1,15 @@
+<script>
+    // =============== // METADATA // ===============
+    let pageTitle = "Contact Us!";
+    let pageDescription = "Hey there! Want to contact us? Feel free to drop us an email at toast@happybread.net";
+</script>
+<!-- =============== // PAGE TITLE AND METADATA // ===============  -->
+
 <svelte:head>
-    <title>Contact Us</title>
-    <meta name="description" content="Dam Levels Contact Us" />
+	<title>{pageTitle}</title>
+	<meta name="description" content={pageDescription} />
+    <meta name="twitter:title" property="og:title" itemprop="name" content={pageTitle} />
+    <meta name="twitter:description" property="og:description" itemprop="description" content={pageDescription} />
 </svelte:head>
 
 <div class="container mx-auto p-6 max-w-4xl bg-white rounded-2xl shadow-lg dark:bg-gray-900 dark:text-white transition-all duration-300">

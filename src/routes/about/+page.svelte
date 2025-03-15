@@ -1,6 +1,15 @@
+<script>
+    // =============== // METADATA // ===============
+    let pageTitle = "About";
+    let pageDescription = "What's this thing about? This project is a little labor of love, built as a hobby to share useful info with anyone who’s curious about South Africa’s dams.";
+</script>
+<!-- =============== // PAGE TITLE AND METADATA // ===============  -->
+
 <svelte:head>
-    <title>About</title>
-    <meta name="description" content="Dam Levels About" />
+	<title>{pageTitle}</title>
+	<meta name="description" content={pageDescription} />
+    <meta name="twitter:title" property="og:title" itemprop="name" content={pageTitle} />
+    <meta name="twitter:description" property="og:description" itemprop="description" content={pageDescription} />
 </svelte:head>
 
 <div class="container mx-auto p-6 max-w-4xl bg-white rounded-2xl shadow-lg dark:bg-gray-900 dark:text-white transition-all duration-300">

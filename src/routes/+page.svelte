@@ -40,11 +40,21 @@
   function handleTabChange(event) {
     activeTab = event.detail;
   }
+
+	// =============== // METADATA // ===============
+
+  let pageTitle = "Dam Dashboard";
+  let pageDescription = "Welcome to the South African Dam Dashboard! This dashboard provides weekly updates on dam levels across South Africa, with data sourced from the DWS. The information is presented in both a handy table and an interactive map, making it easy to explore water levels across the country.";
+
 </script>
 
+<!-- =============== // PAGE TITLE AND METADATA // ===============  -->
+
 <svelte:head>
-  <title>Dam Dash</title>
-  <link rel="icon" href="/favicon.svg" />
+	<title>{pageTitle}</title>
+	<meta name="description" content={pageDescription} />
+  <meta name="twitter:title" property="og:title" itemprop="name" content={pageTitle} />
+  <meta name="twitter:description" property="og:description" itemprop="description" content={pageDescription} />
 </svelte:head>
 
 <div class="container mx-auto p-2 md:p-4 bg-white rounded-2xl dark:bg-gray-900 dark:text-white">
