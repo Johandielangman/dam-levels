@@ -1,4 +1,21 @@
 <script lang="ts">
+	// ~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~
+	//      /\_/\
+	//     ( o.o )
+	//      > ^ <
+	//
+	// Author: Johan Hanekom
+	// Date: March 2025
+	//
+	// ~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~
+
+	// =============== // SVELTE IMPORTS // ===============
+
+	import { browser } from '$app/environment';
+	import { PUBLIC_UMAMI_SITE_ID } from '$env/static/public';
+
+	// =============== // THIRD PARTY IMPORTS // ===============
+
 	import { 
 		Navbar,
 		NavBrand,
@@ -10,37 +27,26 @@
 		FooterLinkGroup,
 		FooterLink
 	} from 'flowbite-svelte';
-	import '../app.css';
-	import { browser } from '$app/environment';
 	import { UmamiAnalytics } from '@lukulent/svelte-umami';
-    import { PUBLIC_UMAMI_SITE_ID } from '$env/static/public';
-	import CookieBanner from '$lib/components/CookieBanner.svelte';
 
+	// =============== // CUSTOM COMPONENT IMPORTS // ===============
+
+	import CookieBanner from '$lib/components/CookieBanner.svelte';
+	import DarkModeButton from '$lib/components/DarkModeButton.svelte'
+	import AdUnit from '$lib/components/AdUnit.svelte';
+
+	// =============== // STATIC IMPORTS // ===============
+
+	import '../app.css';
+
+
+	// =============== // PROPS // ===============
 
 	let { children } = $props();
 
-
-    // Initialize with localStorage value or true (dark mode) by default
-    let darkMode = $state(
-        browser 
-            ? localStorage.getItem('darkMode') !== null 
-                ? localStorage.getItem('darkMode') === 'true'
-                : true
-            : true
-    );
-
-    // Sync with localStorage and document whenever darkMode changes
-    $effect(() => {
-        if (browser) {
-            localStorage.setItem('darkMode', darkMode.toString());
-            document.documentElement.classList.toggle('dark', darkMode);
-        }
-    });
-
-    function toggleDarkMode() {
-        darkMode = !darkMode;
-    }
 </script>
+
+<!-- =============== // PAGE TITLE AND METADATA // ===============  -->
 
 <svelte:head>
 	<title>Dam Levels</title>
@@ -63,25 +69,17 @@
 	<div class="pb-3">
 		<Navbar rounded color="blue">
 			<NavBrand href="/">
-				{#if darkMode}
-					<img src="/logo/logo-light.svg" class="me-3 h-7 sm:h-9" alt="Flowbite Logo" />
-				{:else}
-					<img src="/logo/logo-dark.svg" class="me-3 h-7 sm:h-9" alt="Flowbite Logo" />
-				{/if}
-				<span class="self-center whitespace-nowrap text-xl font-semibold text-gray-900 dark:text-white">Dam Levels</span>
+				<img 
+				src="/logo/logo-light.svg" 
+				class="mr-3 h-7 sm:h-9" 
+				alt="Flowbite Logo Light" 
+				/>
+				<span class="self-center whitespace-nowrap text-xl font-semibold text-gray-900 dark:text-white">
+					Dam Levels
+				</span>
 			</NavBrand>
 			<div class="flex md:order-2">
-				<button 
-					onclick={toggleDarkMode} 
-					class="p-2"
-					aria-label="Toggle Dark Mode"
-				>
-					{#if darkMode}
-						🌙
-					{:else}
-						☀️
-					{/if}
-				</button>
+				<DarkModeButton/>
 				<NavHamburger />
 			</div>
 			<NavUl class="order-1">
@@ -93,19 +91,10 @@
 	</div>
 	
 	{@render children()}
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2319436899330467"
-     crossorigin="anonymous"></script>
-	<!-- Default Ad Unit -->
-	<ins class="adsbygoogle"
-		style="display:block"
-		data-ad-client="ca-pub-2319436899330467"
-		data-ad-slot="5748555666"
-		data-ad-format="auto"
-		data-full-width-responsive="true"></ins>
-	<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-	</script>
+
 	<CookieBanner/>
+	<AdUnit/>
+
 	<div class="mt-auto">
 		<Footer>
 			<div class="sm:flex sm:items-center sm:justify-between">
