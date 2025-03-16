@@ -38,3 +38,6 @@ export async function load({ fetch, url, depends }) {
     selectedProvince: province
   };
 }
+
+export const prerender = false;
+export const ssr = true;
