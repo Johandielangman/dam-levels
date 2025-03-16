@@ -1,4 +1,4 @@
-/** @type {import('./$types').PageLoad} */
+/** @type {import('../$types').PageLoad} */
 export async function load({ fetch, url, depends }) {
   // Add a dependency on a custom key
   depends('app:damData');

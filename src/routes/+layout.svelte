@@ -11,7 +11,6 @@
 
 	// =============== // SVELTE IMPORTS // ===============
 
-	import { browser } from '$app/environment';
 	import { PUBLIC_UMAMI_SITE_ID } from '$env/static/public';
 
 	// =============== // THIRD PARTY IMPORTS // ===============
@@ -83,7 +82,7 @@
 				alt="Flowbite Logo Light" 
 				/>
 				<span class="self-center whitespace-nowrap text-xl font-semibold text-gray-900 dark:text-white">
-					Dam Levels of South Africa
+					Dam Levels of SA
 				</span>
 			</NavBrand>
 			<div class="flex md:order-2">
@@ -91,8 +90,7 @@
 				<NavHamburger />
 			</div>
 			<NavUl class="order-1">
-				<NavLi href="/">Dashboard</NavLi>
-				<NavLi href="/about">About</NavLi>
+				<NavLi href="/dashboard">Dashboard</NavLi>
 				<NavLi href="/contact">Contact</NavLi>
 			</NavUl>
 		</Navbar>
